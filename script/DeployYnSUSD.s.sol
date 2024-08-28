@@ -5,12 +5,15 @@ import "forge-std/Script.sol";
 import "../src/YnAsset.sol";
 import "../src/YnVault.sol";
 import "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
+import "forge-std/console.sol";
 
 
 contract DeployYnSUSD is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
         address deployerAddress = vm.addr(deployerPrivateKey);
+
+        console.log("Deployer address:", deployerAddress);
 
         vm.startBroadcast(deployerPrivateKey);
 
@@ -42,6 +45,8 @@ contract DeployYnSUSD is Script {
             )
         );
         console.log("YnSUSD proxy deployed at:", address(ynSUSDProxy));
+
+        
 
         vm.stopBroadcast();
     }
