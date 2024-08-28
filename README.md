@@ -1,3 +1,8 @@
+
+## Setup
+
+```forge build```
+
 ## Minting
 
 ### Mint base asset
