@@ -1,0 +1,11 @@
+{
+  "deployerAddress": "0x72fdBD51085bDa5eEEd3b55D1a46E2e92f0837a5",
+  "ynUSD": {
+    "implementation": "0x5433d3B2499bc933b7EC1725996812ba85fD6b1D",
+    "proxy": "0x40a87fF2d853290157bcB3E3494e53784524651a"
+  },
+  "YnSUSD": {
+    "implementation": "0x46d6F51CF0CbA14C3fE1F360eb0112a4c3A8BaE0",
+    "proxy": "0x6bd62ECCddd48a1d42ED04D9b19592f07cCC5794"
+  }
+}

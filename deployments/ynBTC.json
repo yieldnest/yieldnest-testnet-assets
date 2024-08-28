@@ -1,0 +1,11 @@
+{
+  "deployerAddress": "0x72fdBD51085bDa5eEEd3b55D1a46E2e92f0837a5",
+  "ynBTC": {
+    "implementation": "0xC5BB5aCfdd84A59Eb50AD5f9B2b485bD288e6EaF",
+    "proxy": "0x810615698eeAEE37efA98F821411aACe4e0d14e5"
+  },
+  "YnSBTC": {
+    "implementation": "0xc047d947b39c205B20A91f750E1949b8A4ACD04c",
+    "proxy": "0xf1BD6f0da70926d0d4c9Ed76ef4DBF6963972a13"
+  }
+}
