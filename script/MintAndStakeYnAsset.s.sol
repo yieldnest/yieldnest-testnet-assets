@@ -34,8 +34,18 @@ contract MintAndStakeYnAsset is Script {
         console.log("Approved", amountToMint, "tokens for vault");
 
         // Deposit YnAsset tokens into YnVault
-        vault.deposit(amountToMint, deployerAddress);
+        uint256 sharesReceived = vault.deposit(amountToMint, deployerAddress);
         console.log("Deposited", amountToMint, "tokens into vault");
+        console.log("Received", sharesReceived, "vault shares");
+
+        // Log balances after minting and staking
+        uint256 assetBalance = asset.balanceOf(deployerAddress);
+        uint256 vaultBalance = vault.balanceOf(deployerAddress);
+        uint256 assetInVault = vault.totalAssets();
+
+        console.log("Asset balance of receiver:", assetBalance);
+        console.log("Vault shares balance of receiver:", vaultBalance);
+        console.log("Total assets in vault:", assetInVault);
 
         vm.stopBroadcast();
     }
