@@ -7,6 +7,7 @@
   },
   "YnSBTC": {
     "implementation": "0xc047d947b39c205B20A91f750E1949b8A4ACD04c",
-    "proxy": "0xf1BD6f0da70926d0d4c9Ed76ef4DBF6963972a13"
+    "proxy": "0xf1BD6f0da70926d0d4c9Ed76ef4DBF6963972a13",
+    "eigenlayerStrategy": "0x1b4F6959f073F5eD89b1169cC365A2279B3e45DE"
   }
 }
