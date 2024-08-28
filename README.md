@@ -1,66 +1,34 @@
-## Foundry
+## Minting
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+### Mint base asset
 
-Foundry consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+#### ynBTC
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```
+VAULT_ADDRESS=0x810615698eeAEE37efA98F821411aACe4e0d14e5 MINT_AMOUNT=1000000000000000000 forge script script/MintYnAsset.s.sol --rpc-url https://rpc.ankr.com/eth_holesky --broadcast --verify
 ```
 
-### Test
 
-```shell
-$ forge test
+#### ynUSD
+
+
+```
+VAULT_ADDRESS=0x40a87fF2d853290157bcB3E3494e53784524651a MINT_AMOUNT=1000000000000000000 forge script script/MintYnAsset.s.sol --rpc-url https://rpc.ankr.com/eth_holesky --broadcast --verify
 ```
 
-### Format
 
-```shell
-$ forge fmt
+### Mint and stake to vault
+
+#### ynSBTC
+
+```
+VAULT_ADDRESS=0xf1BD6f0da70926d0d4c9Ed76ef4DBF6963972a13 MINT_AMOUNT=1000000000000000000 forge script script/MintandStakeYnAsset.s.sol --rpc-url https://rpc.ankr.com/eth_holesky --broadcast --verify
 ```
 
-### Gas Snapshots
+#### ynSUSD
 
-```shell
-$ forge snapshot
+```
+VAULT_ADDRESS=0x6bd62ECCddd48a1d42ED04D9b19592f07cCC5794 MINT_AMOUNT=1000000000000000000 forge script script/MintandStakeYnAsset.s.sol --rpc-url https://rpc.ankr.com/eth_holesky --broadcast --verify
 ```
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
