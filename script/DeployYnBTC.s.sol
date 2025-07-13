@@ -24,7 +24,9 @@ contract DeployYnBTC is Script {
         TransparentUpgradeableProxy ynBTCProxy = new TransparentUpgradeableProxy(
             address(ynBTCImpl),
             deployerAddress,
-            abi.encodeWithSelector(YnAsset(address(0)).initialize.selector, "YieldNest Bitcoin", "ynBTC", deployerAddress)
+            abi.encodeWithSelector(
+                YnAsset(address(0)).initialize.selector, "YieldNest Bitcoin", "ynBTC", deployerAddress
+            )
         );
         console.log("ynBTC proxy deployed at:", address(ynBTCProxy));
 
@@ -36,8 +38,9 @@ contract DeployYnBTC is Script {
         TransparentUpgradeableProxy ynSBTCProxy = new TransparentUpgradeableProxy(
             address(ynSBTCImpl),
             deployerAddress,
-            abi.encodeWithSelector(YnVault(address(0)).initialize.selector, 
-                IERC20(address(ynBTCProxy)), 
+            abi.encodeWithSelector(
+                YnVault(address(0)).initialize.selector,
+                IERC20(address(ynBTCProxy)),
                 "YieldNest Savings Bitcoin Vault",
                 "YnSBTC",
                 deployerAddress

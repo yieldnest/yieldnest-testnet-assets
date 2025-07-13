@@ -7,7 +7,6 @@ import "../src/YnVault.sol";
 import "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 import "forge-std/console.sol";
 
-
 contract DeployYnSUSD is Script {
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
@@ -37,8 +36,9 @@ contract DeployYnSUSD is Script {
         TransparentUpgradeableProxy ynSUSDProxy = new TransparentUpgradeableProxy(
             address(ynSUSDImpl),
             deployerAddress,
-            abi.encodeWithSelector(YnVault(address(0)).initialize.selector, 
-                IERC20(address(ynUSDProxy)), 
+            abi.encodeWithSelector(
+                YnVault(address(0)).initialize.selector,
+                IERC20(address(ynUSDProxy)),
                 "YieldNest Savings USD Vault",
                 "YnSUSD",
                 deployerAddress
@@ -46,9 +46,6 @@ contract DeployYnSUSD is Script {
         );
         console.log("YnSUSD proxy deployed at:", address(ynSUSDProxy));
 
-        
-
         vm.stopBroadcast();
     }
 }
-

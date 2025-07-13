@@ -10,7 +10,6 @@ interface IStrategy {
     function underlyingToken() external view returns (address);
 }
 
-
 contract VerifyStrategies is Script {
     function run() external {
         verifyStrategy(0x6C50dfEdD1AFfEB9610b91e4A73a4424D6CB3494, 0x810615698eeAEE37efA98F821411aACe4e0d14e5, "ynBTC");
