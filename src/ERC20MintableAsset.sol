@@ -9,6 +9,10 @@ import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol"
 contract ERC20MintableAsset is Initializable, ERC20Upgradeable, OwnableUpgradeable, AccessControlUpgradeable {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
+    constructor() {
+        _disableInitializers();
+    }
+
     function initialize(string memory name, string memory symbol, address owner, uint256 initialMint)
         public
         initializer
